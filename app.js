@@ -7,14 +7,11 @@ const fs = require("fs");
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
-
-
-
 const render = require("./lib/htmlRenderer");
 const team = [];
 
 
-function initalize() {
+function manager() {
     return inquirer.prompt([
         {
             type: "input",
@@ -57,17 +54,17 @@ function buildTeam() {
                 {
                     type: "input",
                     name: "id",
-                    message: `What is your engineer's ID?`
+                    message: `What is their ID?`
                 },
                 {
                     type: "input",
                     name: "email",
-                    message: `What is your engineer's email?`
+                    message: `What is their email?`
                 },
                 {
                     type: "input",
                     name: "github",
-                    message: `What is your engineer's GitHub??`
+                    message: `What is their GitHub??`
                 }
             ]).then((answers) => {
                 let engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
@@ -86,17 +83,17 @@ function buildTeam() {
                 {
                     type: "input",
                     name: "id",
-                    message: `What is your intern's ID?`
+                    message: `What is their ID?`
                 },
                 {
                     type: "input",
                     name: "email",
-                    message: `What is your intern's email?`
+                    message: `What is their email?`
                 },
                 {
                     type: "input",
                     name: "school",
-                    message: `What is your intern's school?`
+                    message: `What is their school?`
                 }
             ]).then((answers) => {
                 let intern = new Intern(answers.name, answers.id, answers.email, answers.school);
@@ -118,7 +115,7 @@ function buildTeam() {
 }
 
 
-initalize()
+manager()
     .then((answers) => {
         const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
         team.push(manager)
