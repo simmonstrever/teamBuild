@@ -1,7 +1,7 @@
 # Development Team Constructor
 
 ## Installation
-    In the terminal run npm init and install jest as well as inquirer. 
+    Download project and In the terminal run npm init and install jest as well as inquirer as they are the dependencies for the team building app, after run app.js in terminal at the correct directory and enter information about your team manager, engineers, and interns for them to be displayed with specified values on the screen.
 
 ## Usaage 
     Anyone wishing to construct a visual reference through node.js with basic information about their Engineers, Interns, and Manager on their dev team.
