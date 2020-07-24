@@ -11,6 +11,14 @@ const render = require("./lib/htmlRenderer");
 const team = [];
 
 
+manager()
+    .then((answers) => {
+        const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
+        team.push(manager)
+        buildTeam();
+    });
+
+
 function manager() {
     return inquirer.prompt([
         {
@@ -115,12 +123,7 @@ function buildTeam() {
 }
 
 
-manager()
-    .then((answers) => {
-        const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
-        team.push(manager)
-        buildTeam();
-    });
+
 
 
 
